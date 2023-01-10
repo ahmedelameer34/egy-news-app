@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_news_app/cubit/theme_cubit/theme_state.dart';
-import 'package:flutter_news_app/network/local/cashe_helper.dart';
+import 'package:flutter_news_app/network/local/cache_helper.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
  ThemeCubit() : super(InitialAppTheme());
@@ -20,7 +20,7 @@ class ThemeCubit extends Cubit<ThemeState> {
         else {
           isDark=!isDark;
      
-          CasheHelper.putBool(key: 'isDark',value: isDark).then((value) {
+          CacheHelper.putBool(key: 'isDark',value: isDark).then((value) {
             emit(ChangeAppTheme());
           });}
     

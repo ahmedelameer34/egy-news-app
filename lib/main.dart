@@ -10,16 +10,16 @@ import 'package:flutter_news_app/news_app_layout/home_layout.dart';
 
 import 'cubit/theme_cubit/theme_cubit.dart';
 import 'cubit/theme_cubit/theme_state.dart';
-import 'network/local/cashe_helper.dart';
+import 'network/local/cache_helper.dart';
 import 'shared/colors.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
  
   DioHelper.init();
-  await CasheHelper.init();
+  await CacheHelper.init();
 
-  bool? isDark = CasheHelper.getBool(key: 'isDark');
+  bool? isDark = CacheHelper.getBool(key: 'isDark');
   runApp(MyApp(isDark!));
 }
 
